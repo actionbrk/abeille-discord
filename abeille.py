@@ -1,9 +1,4 @@
 import discord
-import gspread
-import datetime
-from datetime import timedelta
-from oauth2client.service_account import ServiceAccountCredentials
-from lxml import etree
 
 client = discord.Client()
 discordtoken = os.environ['TOKEN']
