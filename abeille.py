@@ -2,7 +2,7 @@ import discord
 import os
 
 client = discord.Client()
-discordtoken = os.environ['TOKEN']
+discordtoken = os.environ.get('TOKEN')
 
 @client.event
 async def on_message(message):
