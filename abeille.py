@@ -10,7 +10,6 @@ discordtoken = os.environ['TOKEN']
 
 @client.event
 async def on_message(message):
-    global clientg, general_donnees, sheet_general, sheet_messagesheure, data, nb_donnees
 
     if message.author != client.user:
         # Commandes
