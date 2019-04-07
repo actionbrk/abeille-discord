@@ -30,7 +30,6 @@ class Server:
         }
         self.nbdonnees = 0
 
-
 # Récupération des informations
 discordtoken = os.environ.get('DISCORDTOKEN')
 channellog_tmp = os.environ.get('CHANNELLOG')
