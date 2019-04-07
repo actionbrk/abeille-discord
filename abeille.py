@@ -37,7 +37,7 @@ channellog = discord.Object(id=channellog_tmp)
 serverid = os.environ.get('SERVERID')
 serverid1 = os.environ.get('SERVER1')
 serverid2 = os.environ.get('SERVER2')
-clientsecret = str(os.environ.get('CLIENTSECRET'))
+clientsecret = os.environ.get('CLIENTSECRET')
 
 servers = []
 server1 = Server(serverid1)
