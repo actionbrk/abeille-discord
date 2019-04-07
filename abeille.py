@@ -4,6 +4,7 @@ import gspread
 import datetime
 from datetime import timedelta
 from oauth2client.service_account import ServiceAccountCredentials
+import json
 
 client = discord.Client()
 
@@ -36,6 +37,7 @@ channellog = discord.Object(id=channellog_tmp)
 serverid = os.environ.get('SERVERID')
 serverid1 = os.environ.get('SERVER1')
 serverid2 = os.environ.get('SERVER2')
+clientsecret = str(os.environ.get('CLIENTSECRET'))
 
 servers = []
 server1 = Server(serverid1)
@@ -48,6 +50,16 @@ scope = [
     'https://spreadsheets.google.com/feeds',
     'https://www.googleapis.com/auth/drive'
 ]
+
+with open("client_secret.json", "r") as jsonFile:
+    data = json.load(jsonFile)
+
+tmp = data["private_key"]
+data["private_key"] = clientsecret
+
+with open("client_secret.json", "w") as jsonFile:
+    json.dump(data, jsonFile)
+
 creds = ServiceAccountCredentials.from_json_keyfile_name('client_secret.json', scope)
 clientg = gspread.authorize(creds)
 
